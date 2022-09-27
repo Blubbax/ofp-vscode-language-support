@@ -1,0 +1,36 @@
+{
+  "name": "ofp-language-support",
+  "displayName": "OFP Language Support",
+  "description": "Language Support for simple .ofp programs",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "ofp",
+        "path": "./snippets.json"
+      }
+    ],
+    "languages": [{
+      "id": "ofp",
+      "aliases": ["OFP", "ofp"],
+      "extensions": [".ofp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ofp",
+      "scopeName": "source.ofp",
+      "path": "./syntaxes/ofp.tmLanguage.json"
+    },
+    {
+      "path": "./syntaxes/injection.json",
+      "scopeName": "todo-comment.injection",
+      "injectTo": ["source.ofp"]
+    }]
+  }
+}
